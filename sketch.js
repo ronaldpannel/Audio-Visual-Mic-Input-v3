@@ -45,7 +45,7 @@ function setup() {
 function draw() {
   background(0);
 
-  let amplitude = mic.getLevel() * 100;
+  let amplitude = mic.getLevel() * 5000;
 
   for (let i = 0; i < cols; i++) {
     for (let j = 0; j < rows; j++) {
@@ -59,8 +59,9 @@ function draw() {
       d[i][j] -= amplitude;
     }
   }
+  function windowResized() {
+    resizeCanvas(window.innerWidth, window.innerHeight);
+  }
 }
 
-function windowResized() {
-  resizeCanvas(window.innerWidth, window.innerHeight);
-}
+
